@@ -1,6 +1,6 @@
 {
-  "name": "iobroker.mqtt-client",
-  "version": "3.0.0",
+  "name": "iobroker.mqtt-clientw",
+  "version": "0.0.1",
   "description": "Client to connect states to MQTT Broker",
   "author": {
     "name": "mcm1957",
@@ -20,7 +20,7 @@
       "email": "info@haus-automatisierung.com"
     }
   ],
-  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.mqtt-client",
+  "homepage": "https://github.com/wohn-dot-io/ioBroker.mqtt-clientw",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -34,7 +34,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iobroker-community-adapters/ioBroker.mqtt-client"
+    "url": "https://github.com/wohn-dot-io/ioBroker.mqtt-clientw"
   },
   "engines": {
     "node": ">=20"
@@ -93,7 +93,7 @@
     "release-major": "release-script major --yes"
   },
   "bugs": {
-    "url": "https://github.com/iobroker-community-adapters/ioBroker.mqtt-client"
+    "url": "https://github.com/wohn-dot-io/ioBroker.mqtt-clientw"
   },
   "readmeFilename": "README.md"
 }

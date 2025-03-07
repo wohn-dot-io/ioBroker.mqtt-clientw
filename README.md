@@ -87,7 +87,7 @@ default: state-ID converted to a mqtt topic.
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-### 3.0.0 (2025-01-24)
+### 0.0.1 (2025-01-24)
 * (@klein0r) Breaking change: Underscores are not replaced by spaces in the corresponding topic anymore
 
 ### 2.1.0 (2024-11-12)

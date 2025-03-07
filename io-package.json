@@ -1,112 +1,25 @@
 {
   "common": {
-    "name": "mqtt-client",
-    "version": "3.0.0",
+    "name": "mqtt-clientw",
+    "version": "0.0.1",
     "news": {
-      "3.0.0": {
-        "en": "Breaking change: Underscores are not replaced by spaces in the corresponding topic anymore",
-        "de": "Bruchänderung: Underscores werden nicht mehr durch Leerzeichen im entsprechenden Thema ersetzt",
-        "ru": "Перерыв: Недооценки больше не заменяются пробелами в соответствующей теме",
-        "pt": "Mudança de ruptura: Os sublinhados não são substituídos por espaços no tópico correspondente mais",
-        "nl": "Verandering: Onderscores worden niet meer vervangen door spaties in het bijbehorende onderwerp",
-        "fr": "Briser le changement : Les sous-scores ne sont plus remplacés par des espaces dans le sujet correspondant",
-        "it": "Cambiamento di rottura: Gli underscore non sono più sostituiti da spazi nell'argomento corrispondente",
-        "es": "Cambio de ruptura: Los subscores ya no son reemplazados por espacios en el tema correspondiente",
-        "pl": "Łamanie zmian: Podkreślenia nie są już zastępowane spacjami w odpowiednim temacie",
-        "uk": "Зміна розривів: Не замінюють пробіли в відповідній темі",
-        "zh-cn": "中断更改 : 重点不再被相应主题的空格所取代"
-      },
-      "2.1.0": {
-        "en": "Adapter requires node.js 20 now.\nAdapter requires js-controller 5.0.19 and admin 6.17.14 now.\nAdapter changed to meet Responsive Design rules.\nDependencies have been updated.",
-        "de": "Adapter benötigt node.js 20 jetzt.\nAdapter benötigt jetzt js-controller 5.0.19 und admin 6.17.14.\nAdapter geändert, um Responsive Design Regeln zu erfüllen.\nAbhängigkeiten wurden aktualisiert.",
-        "ru": "Адаптер требует node.js 20.\nАдаптер требует js-контроллер 5.0.19 и admin 6.17.14.\nАдаптер изменился, чтобы соответствовать правилам Responsive Design.\nЗависимость была обновлена.",
-        "pt": "Adaptador requer node.js 20 agora.\nAdaptador requer js-controller 5.0.19 e admin 6.17.14 agora.\nAdapter mudou para atender às regras de Design Responsável.\nAs dependências foram atualizadas.",
-        "nl": "Adapter vereist node.js 20 nu.\nAdapter vereist js-controller 5.01.19 en admin 6.17.14 nu.\nAdapter veranderd om te voldoen aan Responsive Design regels.\nAfhankelijkheden zijn bijgewerkt.",
-        "fr": "Adaptateur nécessite node.js 20 maintenant.\nAdaptateur nécessite js-controller 5.0.19 et admin 6.17.14 maintenant.\nAdaptateur modifié pour respecter les règles de conception réactive.\nLes dépendances ont été actualisées.",
-        "it": "Adattatore richiede node.js 20 ora.\nAdattatore richiede js-controller 5.0.19 e admin 6.17.14 ora.\nAdattatore modificato per soddisfare le regole di Responsive Design.\nLe dipendenze sono state aggiornate.",
-        "es": "Adaptador requiere node.js 20 ahora.\nAdaptador requiere js-controller 5.0.19 y admin 6.17.14 ahora.\nAdaptador cambió para cumplir con las reglas de diseño responsable.\nSe han actualizado las dependencias.",
-        "pl": "Adapter wymaga Node.js 20 teraz.\nAdapter wymaga sterownika js- 5.0.19 i admin 6.17.14 teraz.\nAdapter zmienił się w celu spełnienia zasad Responsive Design.\nZaktualizowano zależność.",
-        "uk": "Адаптер вимагає node.js 20 тепер.\nАдаптер вимагає js-controller 5.0.19 і admin 6.17.14 тепер.\nПерехідник змінився для дотримання правил адаптивного дизайну.\nОновлено залежність.",
-        "zh-cn": "适配器现在需要20号节点.\n适配器现在需要js控制器5.0.19和管理员6.17.14.\n适配器更改以满足应变设计规则.\n附属关系已经更新."
-      },
-      "2.0.1": {
-        "en": "Added missing information in configuration dialog\nFixed type of port configuration to avoid conflicts",
-        "de": "Fehlende Informationen im Konfigurationsdialog hinzugefügt\nFeste Art der Port-Konfiguration, um Konflikte zu vermeiden",
-        "ru": "Добавить недостающую информацию в диалог конфигурации\nФиксированный тип конфигурации порта, чтобы избежать конфликтов",
-        "pt": "Adicionada informação em falta na caixa de diálogo de configuração\nTipo fixo de configuração de porta para evitar conflitos",
-        "nl": "Ontbrekende informatie toegevoegd in configuratiedialoog\nVast type poortconfiguratie om conflicten te voorkomen",
-        "fr": "Ajout des informations manquantes dans la boîte de dialogue de configuration\nType de configuration de port fixe pour éviter les conflits",
-        "it": "Aggiunto le informazioni mancanti nella finestra di dialogo di configurazione\nTipo fisso di configurazione della porta per evitare conflitti",
-        "es": "Añadido información faltante en el diálogo de configuración\nTipo fijo de configuración portuaria para evitar conflictos",
-        "pl": "Dodano brakujące informacje w oknie konfiguracji\nPoprawiony typ konfiguracji portu w celu uniknięcia konfliktów",
-        "uk": "Додано відсутні дані в діалоговому вікні конфігурації\nВиправлено тип конфігурації порту, щоб уникнути конфліктів",
-        "zh-cn": "在配置对话框中添加缺失的信息\n避免冲突的固定类型端口配置"
-      },
-      "2.0.0": {
-        "en": "(klein0r) Password is now encrypted - you have to re-renter your password in instance settings!\n(klein0r) Use jsonConfig instead of materialize (for instance settings)",
-        "de": "(klein0r) Passwort ist jetzt verschlüsselt - Sie müssen Ihr Passwort in Instanzeinstellungen neugeben!\n(klein0r) Verwenden Sie jsonConfig anstelle von materialisieren (z.B. Einstellungen)",
-        "ru": "(klein0r) Пароль теперь зашифрован - вы должны повторно набрать свой пароль в настройках экземпляра!\n(клеин0р) Используйте jsonConfig вместо материализации (например, настройки)",
-        "pt": "(klein0r) A senha agora está criptografada - você tem que voltar a digitar sua senha em configurações de instância!\n(klein0r) Use jsonConfig em vez de materializar (por exemplo, configurações)",
-        "nl": "(klein0r) Wachtwoord wordt nu versleuteld - u moet uw wachtwoord opnieuw verwisselen in instantie instellingen!\n(klein0r) jsonConfig gebruiken in plaats van materialiseren (bijvoorbeeld instellingen)",
-        "fr": "(klein0r) Le mot de passe est maintenant chiffré - vous devez re-louer votre mot de passe dans les paramètres d'instance!\n(klein0r) Utiliser jsonConfig au lieu de se matérialiser (par exemple paramètres)",
-        "it": "(klein0r) La password è ora crittografata - è necessario ripristinare la password nelle impostazioni delle istanze!\n(Klein0r) Utilizzare jsonConfig invece di materializzare (per esempio impostazioni)",
-        "es": "(klein0r) La contraseña está ahora encriptada - tiene que volver a introducir su contraseña en los ajustes de instancia!\n(klein0r) Utilice jsonConfig en lugar de materializar (por ejemplo, ajustes)",
-        "pl": "(klein0r) Hasło jest teraz zaszyfrowane - musisz ponownie wypożyczyć hasło na przykład w ustawieniach!\n(klein0r) Użyj jsonConfig zamiast materializować (na przykład ustawienia)",
-        "uk": "(klein0r) Пароль тепер зашифрований - ви повинні повторно опрацювати пароль в налаштуваннях екземпляра!\n(klein0r) Використовуйте jsonConfig замість матеріалізації (наприклад, налаштування)",
-        "zh-cn": "(klein0r) 密码现已加密 - 您必须在实例设置中重新租赁您的密码 !\n(鸣笛0r) 使用jsonConfig 代替实现( 例如设置)"
-      },
-      "1.8.0": {
-        "en": "Adapter requires node.js 18 and js-controller >= 5 now\nDependencies have been updated",
-        "de": "Adapter benötigt node.js 18 und js-controller >= 5 jetzt\nAbhängigkeiten wurden aktualisiert",
-        "ru": "Адаптер требует node.js 18 и js-controller >= 5 сейчас\nЗависимость обновлена",
-        "pt": "Adapter requer node.js 18 e js-controller >= 5 agora\nAs dependências foram atualizadas",
-        "nl": "Adapter vereist node.js 18 en js-controller Nu 5\nAfhankelijkheden zijn bijgewerkt",
-        "fr": "Adaptateur nécessite node.js 18 et js-controller >= 5 maintenant\nLes dépendances ont été actualisées",
-        "it": "Adattatore richiede node.js 18 e js-controller >= 5 ora\nLe dipendenze sono state aggiornate",
-        "es": "Adaptador requiere node.js 18 y js-controller √= 5 ahora\nSe han actualizado las dependencias",
-        "pl": "Adapter wymaga node.js 18 i sterownika js- > = 5 teraz\nZaktualizowano zależności",
-        "uk": "Адаптер вимагає node.js 18 і js-controller >= 5 тепер\nЗалежність було оновлено",
-        "zh-cn": "适配器需要节点.js 18和js控制器 QQ 现在5号\n依赖关系已更新"
-      },
-      "1.7.0": {
-        "en": "Dependencies have been updated\nAdapter requires nodejs 16 now",
-        "de": "Abhängigkeiten wurden aktualisiert\nAdapter benötigt jetzt Nodejs 16",
-        "ru": "В зависимости были обновлены\nАдаптер требует nodejs 16 сейчас",
-        "pt": "As dependências foram atualizadas\nAdapter requer nodejs 16 agora",
-        "nl": "Afhankelijkheid\nAdapter vereist nodej 16 nu",
-        "fr": "Les dépendances ont été mises à jour\nAdaptateur nécessite nodejs 16 maintenant",
-        "it": "Le dipendenze sono state aggiornate\nAdattatore richiede nodejs 16 ora",
-        "es": "Se han actualizado las dependencias\nAdaptador requiere nodejs 16 ahora",
-        "pl": "Zależności zostały zaktualizowane\nAdapter wymaga już 16 węzłów",
-        "uk": "Оновлено залежність\nАдаптер вимагає nodejs 16 тепер",
-        "zh-cn": "已更新了属地\n道歉现在需要16个不听众。"
-      },
-      "1.6.5": {
-        "en": "prevent crash cases on invalid subscribe",
-        "de": "verhindern crash-fälle bei ungültiger anmeldung",
-        "ru": "предотвратить случаи аварии на недействительной подписке",
-        "pt": "prevenir casos de acidente em assinatura inválida",
-        "nl": "verhinder crash gevallen op invalide subschrijving",
-        "fr": "prévenir les cas de crash sur les abonnés invalides",
-        "it": "prevenire casi di crash su abbonamento non valido",
-        "es": "evitar los casos de fallo en invalidez",
-        "pl": "zapobieganie wypadków w przypadku nielegalnego subskrypcji",
-        "uk": "запобігання аварійних випадків на недійсній підписці",
-        "zh-cn": "防止无效同意的事故"
+      "0.0.1": {
+        "en": "Customized for wohnio needs",
+        "de": "Massgeschneidert fur wohnio-Bedurfnisse"
       }
     },
     "titleLang": {
-      "en": "MQTT client",
-      "de": "MQTT-Client",
-      "ru": "MQTT Клиент",
-      "pt": "Cliente MQTT",
-      "nl": "MQTT-klant",
-      "fr": "Client MQTT",
-      "it": "Client MQTT",
-      "es": "Cliente MQTT",
-      "pl": "Klient MQTT",
-      "uk": "Клієнт MQTT",
-      "zh-cn": "MQTT客户端"
+      "en": "Wohnio MQTT client",
+      "de": "Wohnio MQTT-Client",
+      "ru": "Wohnio MQTT Клиент",
+      "pt": "Wohnio Cliente MQTT",
+      "nl": "Wohnio MQTT-klant",
+      "fr": "Wohnio Client MQTT",
+      "it": "Wohnio Client MQTT",
+      "es": "Wohnio Cliente MQTT",
+      "pl": "Wohnio Klient MQTT",
+      "uk": "Wohnio Клієнт MQTT",
+      "zh-cn": "Wohnio MQTT客户端"
     },
     "desc": {
       "en": "Syncing with MQTT Brokers",
@@ -141,8 +54,8 @@
     "platform": "Javascript/Node.js",
     "icon": "mqtt-client.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.mqtt-client/master/admin/mqtt-client.png",
-    "readme": "https://github.com/iobroker-community-adapters/ioBroker.mqtt-client/blob/master/README.md",
+    "extIcon": "https://raw.githubusercontent.com/wohn-dot-io/ioBroker.mqtt-clientw/master/admin/mqtt-client.png",
+    "readme": "https://github.com/wohn-dot-io/ioBroker.mqtt-clientw/blob/master/README.md",
     "loglevel": "info",
     "tier": 1,
     "mode": "daemon",
@@ -218,8 +131,8 @@
         "condition": {
           "operand": "and",
           "rules": [
-            "oldVersion<3.0.0",
-            "newVersion>=3.0.0"
+            "oldVersion<0.0.1",
+            "newVersion>=0.0.1"
           ]
         },
         "title": {
@@ -236,16 +149,16 @@
           "zh-cn": "你的主题可能会改变"
         },
         "text": {
-          "en": "Underscores in object IDs have been replaced by spaces in the corresponding topic. This has been changed in version 3.0.0. Check if any of your object IDs contains an underscore which might lead to another topic.",
-          "de": "Unterstriche in Objekt-IDs wurden bisher durch Leerzeichen im entsprechenden Topic ersetzt. Dies wurde in Version 3.0.0 geändert. Überprüfe, ob eine Deiner Objekt-IDs einen Unterstrich enthält, welcher zu einem anderen Topic führen könnte.",
-          "ru": "Заполнители в ID объектов были заменены пробелами в соответствующей теме. Это было изменено в версии 3.0.0. Проверьте, содержит ли какой-либо из ваших идентификаторов объекта подчеркивание, которое может привести к другой теме.",
-          "pt": "Os sublinhados em IDs de objeto foram substituídos por espaços no tópico correspondente. Isso foi alterado na versão 3.0.0. Verifique se qualquer um dos seus IDs de objeto contém um sublinhado que pode levar a outro tópico.",
-          "nl": "Onderscores in object-ID's zijn vervangen door spaties in het overeenkomstige onderwerp. Dit is veranderd in versie 3.0.0. Controleer of een van uw object-ID's een underscore bevat die kan leiden tot een ander onderwerp.",
-          "fr": "Les sous-scores dans les ID d'objet ont été remplacés par des espaces dans le sujet correspondant. Ceci a été modifié dans la version 3.0.0. Vérifiez si l'un de vos identifiants d'objet contient un souligné qui pourrait conduire à un autre sujet.",
-          "it": "Gli underscore in ID oggetto sono stati sostituiti da spazi nell'argomento corrispondente. Questo è stato modificato nella versione 3.0.0. Controlla se uno dei tuoi ID oggetti contiene un underscore che potrebbe portare a un altro argomento.",
-          "es": "Los subscores en identificaciones de objetos han sido reemplazados por espacios en el tema correspondiente. Esto ha sido cambiado en la versión 3.0.0. Comprueba si alguna de tus identificaciones de objetos contiene un subrayado que podría llevar a otro tema.",
-          "pl": "Podkreślenia w identyfikatorach obiektów zostały zastąpione spacjami w odpowiednim temacie. Zostało to zmienione w wersji 3.0.0. Sprawdź, czy któraś z identyfikatorów obiektu zawiera podkreślenie, które może prowadzić do innego tematu.",
-          "uk": "Підкреслення в ідентифікаторах об'єкта було замінено на пробіли в відповідній темі. Це було змінено в версії 3.0.0. Перевірити, якщо будь-який з ідентифікаторів об'єкта містить підряд, який може призвести до іншої теми.",
+          "en": "Underscores in object IDs have been replaced by spaces in the corresponding topic. This has been changed in version 0.0.1. Check if any of your object IDs contains an underscore which might lead to another topic.",
+          "de": "Unterstriche in Objekt-IDs wurden bisher durch Leerzeichen im entsprechenden Topic ersetzt. Dies wurde in Version 0.0.1 geändert. Überprüfe, ob eine Deiner Objekt-IDs einen Unterstrich enthält, welcher zu einem anderen Topic führen könnte.",
+          "ru": "Заполнители в ID объектов были заменены пробелами в соответствующей теме. Это было изменено в версии 0.0.1. Проверьте, содержит ли какой-либо из ваших идентификаторов объекта подчеркивание, которое может привести к другой теме.",
+          "pt": "Os sublinhados em IDs de objeto foram substituídos por espaços no tópico correspondente. Isso foi alterado na versão 0.0.1. Verifique se qualquer um dos seus IDs de objeto contém um sublinhado que pode levar a outro tópico.",
+          "nl": "Onderscores in object-ID's zijn vervangen door spaties in het overeenkomstige onderwerp. Dit is veranderd in versie 0.0.1. Controleer of een van uw object-ID's een underscore bevat die kan leiden tot een ander onderwerp.",
+          "fr": "Les sous-scores dans les ID d'objet ont été remplacés par des espaces dans le sujet correspondant. Ceci a été modifié dans la version 0.0.1. Vérifiez si l'un de vos identifiants d'objet contient un souligné qui pourrait conduire à un autre sujet.",
+          "it": "Gli underscore in ID oggetto sono stati sostituiti da spazi nell'argomento corrispondente. Questo è stato modificato nella versione 0.0.1. Controlla se uno dei tuoi ID oggetti contiene un underscore che potrebbe portare a un altro argomento.",
+          "es": "Los subscores en identificaciones de objetos han sido reemplazados por espacios en el tema correspondiente. Esto ha sido cambiado en la versión 0.0.1. Comprueba si alguna de tus identificaciones de objetos contiene un subrayado que podría llevar a otro tema.",
+          "pl": "Podkreślenia w identyfikatorach obiektów zostały zastąpione spacjami w odpowiednim temacie. Zostało to zmienione w wersji 0.0.1. Sprawdź, czy któraś z identyfikatorów obiektu zawiera podkreślenie, które może prowadzić do innego tematu.",
+          "uk": "Підкреслення в ідентифікаторах об'єкта було замінено на пробіли в відповідній темі. Це було змінено в версії 0.0.1. Перевірити, якщо будь-який з ідентифікаторів об'єкта містить підряд, який може призвести до іншої теми.",
           "zh-cn": "对象ID中的强调已被相应主题的空格所取代. 在3.0.0版本中,这一说法有所改变。 检查您的对象ID是否包含一个可能导致另一个主题的下划线 ."
         },
         "level": "warn",
@@ -270,7 +183,7 @@
     "websocket": false,
     "ssl": false,
     "rejectUnauthorized": true,
-    "clientId": "iobroker-mqtt-client",
+    "clientId": "iobroker-mqtt-clientw",
     "username": "",
     "password": "",
     "onConnectTopic": "",
@@ -281,8 +194,8 @@
     "lastWillMessage": "",
     "subscriptions": "",
     "reconnectPeriod": 30000,
-    "outbox": "ioBroker",
-    "inbox": "ioBroker",
+    "outbox": "building/",
+    "inbox": "set/building/",
     "enabled": false,
     "publish": false,
     "pubChangesOnly": false,
