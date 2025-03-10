@@ -15,7 +15,7 @@ class MqttClient extends utils.Adapter {
     constructor(options) {
         super({
             ...options,
-            name: 'mqtt-client',
+            name: 'mqtt-clientw',
         });
 
         this._connected = false;
@@ -631,6 +631,34 @@ class MqttClient extends utils.Adapter {
         }
     }
 
+    // Wohnio custom (config mqtt)
+    setCustomMqtt(id, obj) {        
+        obj.common.custom = {
+            ...obj.common.custom,
+            [this.namespace]: {
+                enabled: !!obj.common.customConfigs.mqttEnabled,
+                topic: `${obj.common.customConfigs.standardName}/${obj.common.customConfigs.linkedId}`,
+                publish: true,
+                pubChangesOnly: true,
+                pubAsObject: true,
+                qos: 1,
+                retain: false,
+                subscribe: false,
+                subChangesOnly: false,
+                subAsObject: false,
+                subQos: 0,
+                setAck: false
+            }
+        };
+        this.setForeignObject(id, obj, err => {
+            if (!err) {
+                this.log.info(`Updated ${id} with mqtt configs ${obj?.common?.custom[this.namespace]?.topic}`);
+            } else {
+                this.log.error(`Failed to update ${id}: ${err}`);
+            }
+        });
+    }
+
     /**
      * Is called if a subscribed object changes
      *
@@ -641,6 +669,23 @@ class MqttClient extends utils.Adapter {
         const custom = _context.custom;
         const subTopics = _context.subTopics;
         const topic2id = _context.topic2id;
+
+
+        /** START WOHNIO CUSTOM BLOCK */
+
+        const origin = id.split('.')[0]
+        if (
+            (origin === 'modbusw' || origin === 'mbusw') &&
+            obj?.type === 'state' &&
+            obj?.common.customConfigs &&
+            !obj?.common?.custom?.[this.namespace]
+          ) {
+            this.setCustomMqtt(id, obj);
+          }
+
+        /** END OF WOHNIO CUSTOM BLOCK */
+
+ 
 
         if (obj?.common?.custom?.[this.namespace]?.enabled) {
             custom[id] = obj.common.custom[this.namespace];
