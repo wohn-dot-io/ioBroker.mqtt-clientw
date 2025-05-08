@@ -632,31 +632,42 @@ class MqttClient extends utils.Adapter {
     }
 
     // Wohnio custom (config mqtt)
-    setCustomMqtt(id, obj) {        
-        obj.common.custom = {
-            ...obj.common.custom,
-            [this.namespace]: {
-                enabled: !!obj.common.customConfigs.mqttEnabled,
-                topic: `${obj.common.customConfigs.standardName}/${obj.common.customConfigs.linkedId}`,
-                publish: true,
-                pubChangesOnly: true,
-                pubAsObject: true,
-                qos: 1,
-                retain: false,
-                subscribe: false,
-                subChangesOnly: false,
-                subAsObject: false,
-                subQos: 0,
-                setAck: false
+    setCustomMqtt(id, obj) {      
+        if(obj.common.customConfigs.linkedId) {
+            let topic = `${obj.common.customConfigs.standardName}/${obj.common.customConfigs.linkedId}`;
+
+            if(obj.common.customConfigs.postTopicValue) {
+                topic += `/${obj.common.customConfigs.postTopicValue}`; // for info.connection case
             }
-        };
-        this.setForeignObject(id, obj, err => {
-            if (!err) {
-                this.log.info(`Updated ${id} with mqtt configs ${obj?.common?.custom[this.namespace]?.topic}`);
-            } else {
-                this.log.error(`Failed to update ${id}: ${err}`);
-            }
-        });
+
+            obj.common.custom = {
+                ...obj.common.custom,
+                [this.namespace]: {
+                    enabled: !!obj.common.customConfigs.mqttEnabled,
+                    topic,
+                    publish: true,
+                    pubChangesOnly: true,
+                    pubAsObject: true,
+                    qos: 1,
+                    retain: !!obj.common.customConfigs.retained,
+                    subscribe: false,
+                    subChangesOnly: false,
+                    subAsObject: false,
+                    subQos: 0,
+                    setAck: false
+                },
+            };
+
+            this.setForeignObject(id, obj, err => {
+                if (!err) {
+                    this.log.info(`Updated ${id} with mqtt configs ${obj?.common?.custom[this.namespace]?.topic}`);
+                } else {
+                    this.log.error(`Failed to update ${id}: ${err}`);
+                }
+            });
+        } else {
+            this.log.warn(`Wohnio custom config for ${id} is not valid. Missing linkedId.`);
+        }
     }
 
     /**

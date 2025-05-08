@@ -183,7 +183,7 @@
     "websocket": false,
     "ssl": false,
     "rejectUnauthorized": true,
-    "clientId": "iobroker-mqtt-clientw",
+    "clientId": "iobroker-[buildingID]",
     "username": "",
     "password": "",
     "onConnectTopic": "",
